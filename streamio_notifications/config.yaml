@@ -1,6 +1,6 @@
 name: "Stremio Notifications"
 description: "Track your Stremio library and get notified of new releases via Home Assistant calendar events"
-version: "1.0.2"
+version: "1.0.3"
 slug: "streamio_notifications"
 url: "https://github.com/djodjo02130/StremioNotifications"
 arch:
