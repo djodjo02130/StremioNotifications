@@ -27,5 +27,5 @@ schema:
   calendar_entity: "str"
   days_ahead: "int(1,90)"
   content_types:
-    - "list(series|movies)"
+    - "match(^(series|movies)$)"
   log_level: "list(debug|info|warning|error)"
