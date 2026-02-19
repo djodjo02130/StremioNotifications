@@ -9,6 +9,9 @@ on:
       - "streamio_notifications/**"
       - "!streamio_notifications/config.yaml"
 
+permissions:
+  contents: write
+
 jobs:
   bump:
     runs-on: ubuntu-latest
