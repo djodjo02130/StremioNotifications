@@ -1,0 +1,22 @@
+configuration:
+  stremio_email:
+    name: Stremio Email
+    description: Email address for your Stremio account
+  stremio_password:
+    name: Stremio Password
+    description: Password for your Stremio account
+  check_interval_hours:
+    name: Check Interval (hours)
+    description: How often to check for new releases (1-168 hours)
+  calendar_entity:
+    name: Calendar Entity
+    description: Home Assistant calendar entity to create events in
+  days_ahead:
+    name: Days Ahead
+    description: How many days ahead to look for upcoming releases (1-90)
+  content_types:
+    name: Content Types
+    description: Types of content to track from your Stremio library
+  log_level:
+    name: Log Level
+    description: Verbosity level for addon logs

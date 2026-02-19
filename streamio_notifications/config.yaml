@@ -1,0 +1,32 @@
+name: "Stremio Notifications"
+description: "Track your Stremio library and get notified of new releases via Home Assistant calendar events"
+version: "1.0.0"
+slug: "streamio_notifications"
+url: "https://github.com/djodjo02130/StremioNotifications"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+homeassistant_api: true
+options:
+  stremio_email: ""
+  stremio_password: ""
+  check_interval_hours: 6
+  calendar_entity: "calendar.stremio_releases"
+  days_ahead: 14
+  content_types:
+    - "series"
+    - "movies"
+  log_level: "info"
+schema:
+  stremio_email: "email"
+  stremio_password: "password"
+  check_interval_hours: "int(1,168)"
+  calendar_entity: "str"
+  days_ahead: "int(1,90)"
+  content_types:
+    - "list(series|movies)"
+  log_level: "list(debug|info|warning|error)"
+image: "ghcr.io/djodjo02130/streamio-notifications-{arch}"
