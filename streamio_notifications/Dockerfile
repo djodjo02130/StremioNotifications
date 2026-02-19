@@ -8,3 +8,6 @@ COPY app /app
 RUN pip3 install --no-cache-dir --break-system-packages -r /app/requirements.txt
 
 COPY rootfs /
+
+RUN chmod a+x /etc/services.d/streamio_notifications/run \
+    && chmod a+x /etc/services.d/streamio_notifications/finish

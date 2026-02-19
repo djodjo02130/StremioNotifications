@@ -1,3 +1,4 @@
-#!/usr/bin/with-bashio
+#!/command/with-contenv bashio
+# shellcheck shell=bash
 bashio::log.info "Starting Stremio Notifications addon..."
 exec python3 /app/main.py
