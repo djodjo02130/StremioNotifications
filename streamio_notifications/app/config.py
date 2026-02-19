@@ -1,7 +1,7 @@
 import json
 import logging
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import List
 
 OPTIONS_PATH = "/data/options.json"
@@ -21,10 +21,20 @@ class AppConfig:
     check_interval_hours: int = 6
     calendar_entity: str = "calendar.stremio_releases"
     days_ahead: int = 14
-    content_types: List[str] = field(default_factory=lambda: ["series", "movies"])
+    track_series: bool = True
+    track_movies: bool = True
     log_level: str = "info"
     supervisor_token: str = ""
     ha_base_url: str = "http://supervisor/core"
+
+    @property
+    def content_types(self) -> List[str]:
+        types = []
+        if self.track_series:
+            types.append("series")
+        if self.track_movies:
+            types.append("movies")
+        return types
 
     @property
     def log_level_int(self) -> int:
@@ -43,7 +53,8 @@ def load_config() -> AppConfig:
         check_interval_hours=options.get("check_interval_hours", 6),
         calendar_entity=options.get("calendar_entity", "calendar.stremio_releases"),
         days_ahead=options.get("days_ahead", 14),
-        content_types=options.get("content_types", ["series", "movies"]),
+        track_series=options.get("track_series", True),
+        track_movies=options.get("track_movies", True),
         log_level=options.get("log_level", "info"),
         supervisor_token=supervisor_token,
     )

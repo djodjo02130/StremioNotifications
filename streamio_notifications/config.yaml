@@ -17,9 +17,8 @@ options:
   check_interval_hours: 6
   calendar_entity: "calendar.stremio_releases"
   days_ahead: 14
-  content_types:
-    - "series"
-    - "movies"
+  track_series: true
+  track_movies: true
   log_level: "info"
 schema:
   stremio_email: "email"
@@ -27,6 +26,6 @@ schema:
   check_interval_hours: "int(1,168)"
   calendar_entity: "str"
   days_ahead: "int(1,90)"
-  content_types:
-    - "match(^(series|movies)$)"
+  track_series: "bool"
+  track_movies: "bool"
   log_level: "list(debug|info|warning|error)"

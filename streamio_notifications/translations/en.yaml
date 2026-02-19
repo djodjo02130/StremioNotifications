@@ -14,9 +14,12 @@ configuration:
   days_ahead:
     name: Days Ahead
     description: How many days ahead to look for upcoming releases (1-90)
-  content_types:
-    name: Content Types
-    description: Types of content to track from your Stremio library
+  track_series:
+    name: Track Series
+    description: Track upcoming episodes for series in your library
+  track_movies:
+    name: Track Movies
+    description: Track upcoming release dates for movies in your library
   log_level:
     name: Log Level
     description: Verbosity level for addon logs
