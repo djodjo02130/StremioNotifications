@@ -1,0 +1,24 @@
+name: Reject Co-Authored-By
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for Co-Authored-By
+        run: |
+          if git log --format=%B origin/HEAD..HEAD 2>/dev/null | grep -qi "Co-Authored-By"; then
+            echo "ERROR: Co-Authored-By found in commit messages. This is not allowed."
+            exit 1
+          fi
+          echo "OK: No Co-Authored-By found."
