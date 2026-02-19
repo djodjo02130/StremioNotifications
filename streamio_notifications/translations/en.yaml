@@ -20,6 +20,9 @@ configuration:
   track_movies:
     name: Track Movies
     description: Track upcoming release dates for movies in your library
+  force_refresh:
+    name: Force Refresh
+    description: Clear tracked events and re-create all calendar events on next restart (resets automatically)
   log_level:
     name: Log Level
     description: Verbosity level for addon logs

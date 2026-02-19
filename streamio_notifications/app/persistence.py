@@ -51,6 +51,9 @@ class Persistence:
     def mark_created(self, event_key: str) -> None:
         self._events[event_key] = date.today().isoformat()
 
+    def clear(self) -> None:
+        self._events = {}
+
     def get_created_keys(self) -> Set[str]:
         return set(self._events.keys())
 

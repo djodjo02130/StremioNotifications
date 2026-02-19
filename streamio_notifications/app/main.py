@@ -116,6 +116,11 @@ def main() -> None:
 
     persistence.load()
 
+    if config.force_refresh:
+        logger.info("Force refresh enabled, clearing persistence")
+        persistence.clear()
+        persistence.save()
+
     logger.info(
         "Configuration: check every %dh, %d days ahead, types=%s, calendar=%s",
         config.check_interval_hours,

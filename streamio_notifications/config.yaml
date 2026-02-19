@@ -19,6 +19,7 @@ options:
   days_ahead: 14
   track_series: true
   track_movies: true
+  force_refresh: false
   log_level: "info"
 schema:
   stremio_email: "email"
@@ -28,4 +29,5 @@ schema:
   days_ahead: "int(1,90)"
   track_series: "bool"
   track_movies: "bool"
+  force_refresh: "bool"
   log_level: "list(debug|info|warning|error)"

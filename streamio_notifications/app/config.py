@@ -23,6 +23,7 @@ class AppConfig:
     days_ahead: int = 14
     track_series: bool = True
     track_movies: bool = True
+    force_refresh: bool = False
     log_level: str = "info"
     supervisor_token: str = ""
     ha_base_url: str = "http://supervisor/core"
@@ -55,6 +56,7 @@ def load_config() -> AppConfig:
         days_ahead=options.get("days_ahead", 14),
         track_series=options.get("track_series", True),
         track_movies=options.get("track_movies", True),
+        force_refresh=options.get("force_refresh", False),
         log_level=options.get("log_level", "info"),
         supervisor_token=supervisor_token,
     )
