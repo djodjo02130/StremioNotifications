@@ -37,8 +37,9 @@ class HAClient:
             "end_date": end_date,
         }
 
-        logger.debug("Creating calendar event: %s on %s", release.summary, start_date)
+        logger.debug("Creating calendar event: %s on %s with payload: %s", release.summary, start_date, payload)
         resp = self._session.post(url, json=payload, timeout=10)
+        logger.debug("HA API response: %s %s", resp.status_code, resp.text)
         resp.raise_for_status()
         logger.info("Created calendar event: %s", release.summary)
 
