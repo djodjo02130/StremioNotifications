@@ -114,12 +114,15 @@ def main() -> None:
         logger.fatal("Stremio login failed: %s", e)
         sys.exit(1)
 
-    persistence.load()
+    logger.debug("force_refresh option value: %s", config.force_refresh)
 
     if config.force_refresh:
         logger.info("Force refresh enabled, clearing persistence")
         persistence.clear()
         persistence.save()
+        logger.info("Persistence cleared")
+    else:
+        persistence.load()
 
     logger.info(
         "Configuration: check every %dh, %d days ahead, types=%s, calendar=%s",
