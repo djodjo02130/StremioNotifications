@@ -29,4 +29,3 @@ schema:
   content_types:
     - "list(series|movies)"
   log_level: "list(debug|info|warning|error)"
-image: "ghcr.io/djodjo02130/streamio-notifications-{arch}"
